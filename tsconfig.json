@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "es2017",                                
+    "module": "commonjs",                           
+    "lib": ["es6"],                                   
+    "allowJs": true,                             
+    "outDir": "./dist",                              
+    "rootDir": "./src",                             
+    "removeComments": true,                      
+    "strict": true,                                    
+    "typeRoots": ["./node_modules/@types","./src/@types"],                             
+    "esModuleInterop": true,                           
+    "experimentalDecorators": true,              
+    "emitDecoratorMetadata": true,               
+    "skipLibCheck": true,                           
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths" :{
+      "@controllers/*":["./src/controllers/*"],
+      "@models/*":["./src/models/*"],
+      "@tools/*":["./src/tools/*"],
+      "@intersScrap/*":["./src/scrap/interfaces/*"],
+      "@intersDB/*":["./src/Database/interfaces/*"],
+      "@servicesDB/*":["./src/Database/services/*"]
+
+    }      
+  }
+}
