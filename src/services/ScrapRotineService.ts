@@ -127,14 +127,17 @@ export class ScrapRotineService{
         }
 
     async populatePagesByChapter(chapter:Chapter){
+        try{
         console.log("Inicio do processo por capitulo")
         if(chapter.status=='Not Found'){
+        
         await chapterService.update({id:chapter.id,status:'Processing'})
         const pages=await pageService.find({
             where:{chapterId:chapter.id},
         })
+        console.log("Pages local",pages.length)
         const numberPages=await mangaOnline.getNumberPages(chapter.url)
-     
+        console.log("Pages Encontrada",JSON.stringify(numberPages))
         for(let x=numberPages.inititalPage;x<numberPages.finalPage;x++){
             await sleep(1)
             const page=await mangaOnline.getPage(chapter.url,x)
@@ -150,6 +153,8 @@ export class ScrapRotineService{
         }
     await chapterService.update({id:chapter.id,status:'Done'})
     }
-
+}catch(error:any){
+    console.log(error.message)
+}
     }
 }
