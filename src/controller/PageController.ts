@@ -18,7 +18,7 @@ export class PageController{
             }
         })
 
-        const chapters=await chapterService.find({where:{}})
+        const chapters=await chapterService.find({where:{id:chapterId}})
         console.log(chapters)
         if(pages.length===0){
             
