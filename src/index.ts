@@ -47,7 +47,7 @@ config()
 import {app} from './Server'
 import {ScrapRotineService} from './services/ScrapRotineService'
 const scrapRotineService=new ScrapRotineService()
-scrapRotineService.run()
+/* scrapRotineService.run() */
 app.listen(process.env.PORT?process.env.PORT:3000,()=>{
     console.log("Server running on port 80")
 })
