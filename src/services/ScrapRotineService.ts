@@ -130,7 +130,7 @@ export class ScrapRotineService{
         try{
             console.log(chapter)
         console.log("Inicio do processo por capitulo")
-        if(chapter.status=='Not Found'){
+       
         
         await chapterService.update({id:chapter.id,status:'Processing'})
         const pages=await pageService.find({
@@ -153,7 +153,7 @@ export class ScrapRotineService{
             }
         }
     await chapterService.update({id:chapter.id,status:'Done'})
-    }
+    
 }catch(error:any){
     console.log(error.message)
 }
