@@ -41,7 +41,7 @@ export class ScrapRotineService{
                        mangaUrl=searhResult
                 }
                 console.log("Page: ",page)
-                
+                await sleep(2)
              }
                const capitulos=await chapterService.find({
                      where:{id_manga:scrap.id},
