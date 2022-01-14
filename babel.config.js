@@ -16,7 +16,9 @@ module.exports = {
           '@tools': './src/tools',
           '@models': './src/models',
           '@controllers': './src/controllers',
-          '@inters': './src/interfaces'
+          "@intersScrap":"./src/scrap/interfaces",
+          "@intersDB":"./src/Database/interfaces",
+          "@servicesDB":"./src/Database/services"
           
         }
       }]
