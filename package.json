@@ -44,5 +44,9 @@
     "ts-node-dev": "^1.1.8",
     "tsconfig-paths": "^3.12.0",
     "typescript": "^4.5.4"
+  },
+  "nodemonConfig": {
+    "ext": "ts",
+    "exec": "npm run build && npm start"
   }
 }
