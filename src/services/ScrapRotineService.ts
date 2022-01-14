@@ -128,6 +128,7 @@ export class ScrapRotineService{
 
     async populatePagesByChapter(chapter:Chapter){
         try{
+            console.log(chapter)
         console.log("Inicio do processo por capitulo")
         if(chapter.status=='Not Found'){
         

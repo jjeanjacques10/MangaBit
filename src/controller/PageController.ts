@@ -19,8 +19,9 @@ export class PageController{
         })
 
         const chapters=await chapterService.find({where:{id:chapterId}})
+        console.log(chapters)
         if(pages.length===0){
-
+            
             scrapRotineService.populatePagesByChapter(chapters[0])
             return res.status(200).json({data:[],total_pages:0,status:chapters[0].status})
         }else{
