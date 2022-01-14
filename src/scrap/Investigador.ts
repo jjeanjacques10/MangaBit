@@ -21,7 +21,7 @@ export class Investigador implements IInvestigador {
         return this.browser;
     }
     async investigate(): Promise<any> {
-        this.setBrowser(await puppetter.launch({args:['--no-sandbox', '--disable-setuid-sandbox'],headless: false}/* {headless:false,args:['--start-maximized']} */))
+        this.setBrowser(await puppetter.launch({args:['--no-sandbox', /* '--disable-setuid-sandbox' */],headless: true}/* {headless:false,args:['--start-maximized']} */))
         const page = await this.getBrowser().newPage()
         await page.goto(this.getCrimeArea().getWebSite())
         this.setPlace(page)
