@@ -48,6 +48,6 @@ import {app} from './Server'
 import {ScrapRotineService} from './services/ScrapRotineService'
 const scrapRotineService=new ScrapRotineService()
 scrapRotineService.run()
-app.listen((process.env.PORT?process.env.PORT:3000),()=>{
-    console.log("Server running on port "+(process.env.PORT?process.env.PORT:3000))
+app.listen(3000,()=>{
+    console.log("Server running on port "+3000)
 })

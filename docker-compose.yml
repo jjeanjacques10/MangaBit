@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: "manga-bit"
+    ports:
+      - "${PORT}:3000"
+    volumes:
+      - .:/usr/app
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+      PORT: ${PORT}
