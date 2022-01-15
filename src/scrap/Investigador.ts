@@ -21,10 +21,10 @@ export class Investigador implements IInvestigador {
         return this.browser;
     }
     async investigate(): Promise<any> {
-        this.setBrowser(await puppetter.launch({args:['--no-sandbox',
-        '--disable-setuid-sandbox',
-       /*  '--disable-dev-shm-usage',
-        '--single-process' */],headless: true}/* {headless:false,args:['--start-maximized']} */))
+        const browser = await puppetter.launch({
+           args: ['--no-sandbox', '--disable-setuid-sandbox']
+        });
+        this.setBrowser(browser)
         const page = await this.getBrowser().newPage()
         await page.goto(this.getCrimeArea().getWebSite())
         this.setPlace(page)
