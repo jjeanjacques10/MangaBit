@@ -43,7 +43,7 @@ export class Investigador implements IInvestigador {
          
     }
     async closeBrowser(): Promise<any> {
-        await this.getBrowser()?.close()
+        await this.browser?.close()
     }
 
 }
